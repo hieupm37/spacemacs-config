@@ -307,6 +307,13 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq custom-file (concat (file-name-directory dotspacemacs-filepath) "emacs-custom-settings.el"))
+
+  (if (string= "HP37-THINKPAD" (system-name))
+      (setq-default dotspacemacs-default-font '("Source Code Pro"
+                                                :size 16
+                                                :weight normal
+                                                :width normal
+                                                :powerline-scale 1.1)))
   )
 
 (defun dotspacemacs/user-config ()
