@@ -316,5 +316,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; Minor changes to mode line.
+  (setq powerline-default-separator 'bar)
+  (setq dotspacemacs-mode-line-unicode-symbols nil)
+  ;; Auto resume layout.
+  (setq dotspacemacs-auto-resume-layouts t) 
   )
 
