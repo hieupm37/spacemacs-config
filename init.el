@@ -328,5 +328,19 @@ you should place your code here."
   (setq dotspacemacs-mode-line-unicode-symbols nil)
   ;; Auto resume layout.
   (setq dotspacemacs-auto-resume-layouts t) 
+
+  ;; Config for org.
+  (with-eval-after-load 'org
+    (setq org-capture-templates '(("t" "Todo [inbox]" entry
+                                   (file+headline "~/workspace/org/gtd/inbox.org" "Tasks")
+                                   "* TODO %i%?")
+                                  ("T" "Tickler" entry
+                                   (file+headline "~/workspace/org/gtd/tickler.org" "Tickler")
+                                   "* %i%? \n %U")))
+    (setq org-refile-targets '(("~/workspace/org/gtd/gtd.org" :maxlevel . 3)
+                               ("~/workspace/org/gtd/someday.org" :level . 1)
+                               ("~/workspace/org/gtd/tickler.org" :maxlevel . 2)))
+    (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+    )
   )
 
